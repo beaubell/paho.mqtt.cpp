@@ -117,6 +117,8 @@ elseif(UNIX)
 	endif()
 endif()
 
-include(CPack)
-add_subdirectory(cmake)
+if(PROJECT_IS_TOP_LEVEL)
+    include(CPack)
+    add_subdirectory(cmake)
+endif()
 
