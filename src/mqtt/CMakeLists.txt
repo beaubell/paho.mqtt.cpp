@@ -15,6 +15,7 @@
 #     Frank Pagliughi
 #*******************************************************************************/
 
+if(PROJECT_IS_TOP_LEVEL)
 install(
     FILES
         async_client.h
@@ -47,4 +48,4 @@ install(
     DESTINATION 
         include/mqtt
 )
-
+endif()

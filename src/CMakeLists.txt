@@ -152,11 +152,12 @@ if(PAHO_BUILD_STATIC)
         $<INSTALL_INTERFACE:include>
     )
 
+    if(PROJECT_IS_TOP_LEVEL)
     ## install the static library
     install(TARGETS paho-mqttpp3-static EXPORT PahoMqttCpp
         ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
         LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
-
+    endif()
     ## Let the archive use the same base name as the shared lib on *nix systems
     if(UNIX)
         set_target_properties(paho-mqttpp3-static PROPERTIES OUTPUT_NAME paho-mqttpp3)
